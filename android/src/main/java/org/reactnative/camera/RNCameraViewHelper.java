@@ -275,11 +275,11 @@ public class RNCameraViewHelper {
 
   // Utilities
 
-  public static int getCorrectCameraRotation(int rotation, int facing) {
+  public static int getCorrectCameraRotation(int rotation, int facing, int cameraOrientation) {
     if (facing == CameraView.FACING_FRONT) {
-      return (rotation - 90 + 360) % 360;
+      return (rotation - cameraOrientation + 360) % 360;
     } else {
-      return (-rotation + 90 + 360) % 360;
+      return (-rotation + cameraOrientation + 360) % 360;
     }
   }
 
